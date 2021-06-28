@@ -337,5 +337,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/usb/etc
 
+# Vendor service manager
+PRODUCT_PACKAGES += \
+    vndservicemanager
+
 # Inherit proprietary targets
 $(call inherit-product, vendor/xiaomi/miatoll/miatoll-vendor.mk)
