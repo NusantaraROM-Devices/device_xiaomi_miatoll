@@ -20,5 +20,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 PRODUCT_PACKAGES += \
     fs_config_files
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    init.qcom.early_boot.sh \
+    init.qcom.sh \
+    init.qti.chg_policy.sh
+
+PRODUCT_PACKAGES += \
+    init.qcom.rc \
+    init.recovery.qcom.rc \
+    init.target.rc \
+    fstab.qcom \
+    ueventd.qcom.rc
+
 # Inherit proprietary targets
 $(call inherit-product, vendor/xiaomi/miatoll/miatoll-vendor.mk)
