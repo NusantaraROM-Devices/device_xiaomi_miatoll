@@ -18,6 +18,12 @@
     "branch":"11"
   },
   {
+    "remote":       "github",
+    "repository":   "ThankYouMario/proprietary_vendor_qcom_sdclang",
+    "target_path":  "prebuilts/clang/host/linux-x86/clang-sdllvm",
+    "branch":       "ruby-12"
+  },
+  {
     "remote":"github",
     "repository":"ArrowOS-Devices/android_kernel_xiaomi_sm6250",
     "target_path":"kernel/xiaomi/sm6250",
