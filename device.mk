@@ -4,6 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Inherit from sm6250-common
+$(call inherit-product, device/xiaomi/sm6250-common/atoll.mk)
+
+PRODUCT_SHIPPING_API_LEVEL := 29
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
@@ -15,8 +20,6 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
-
-PRODUCT_SHIPPING_API_LEVEL := 29
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -60,9 +63,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/thermal/thermal-engine-map-joyeuse.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map-joyeuse.conf \
     $(LOCAL_PATH)/thermal/thermal-engine-normal-joyeuse.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-normal-joyeuse.conf \
     $(LOCAL_PATH)/thermal/thermal-engine-camera-joyeuse.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-camera-joyeuse.conf
-
-# Inherit from sm6250-common
-$(call inherit-product, device/xiaomi/sm6250-common/atoll.mk)
 
 # Inherit proprietary targets
 $(call inherit-product, vendor/xiaomi/miatoll/miatoll-vendor.mk)
