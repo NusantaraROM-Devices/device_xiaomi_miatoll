@@ -28,7 +28,6 @@ persist.dbg.wfc_avail_ovr=1
 
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
-vendor.mm.enable.qcom_parser=16777215
 vendor.video.disable.ubwc=1
 
 # Netflix
@@ -36,7 +35,3 @@ ro.netflix.bsp_rev=Q6250-19132-1
 
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
-
-# WFD
-persist.debug.wfd.enable=1
-vendor.sys.video.disable.ubwc=1

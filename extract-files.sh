@@ -62,13 +62,6 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        # Remove dependency on android.hidl.base@1.0 for WFD native library.
-        system_ext/lib64/libwfdnative.so)
-            "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
-            ;;
-        system_ext/etc/init/wfdservice.rc)
-            sed -i "/^service/! s/wfdservice$/wfdservice64/g" "${2}"
-            ;;
     esac
 }
 
