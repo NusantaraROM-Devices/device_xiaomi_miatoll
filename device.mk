@@ -350,6 +350,7 @@ PRODUCT_PACKAGES += \
     init.qti.chg_policy.sh
 
 PRODUCT_PACKAGES += \
+    init.device.rc \
     init.qcom.power.rc \
     init.qcom.rc \
     init.qcom.usb.rc \
