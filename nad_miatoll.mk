@@ -17,6 +17,7 @@ $(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 NAD_BUILD_TYPE := OFFICIAL
 USE_PIXEL_CHARGING := true
+TARGET_SUPPORTS_QUICK_TAP := true
 
 # Device identifier
 PRODUCT_NAME := nad_miatoll
