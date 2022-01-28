@@ -26,4 +26,5 @@
         orientation. If zero, the value of rounded_corner_radius is used. -->
     <dimen name="rounded_corner_radius_bottom">93px</dimen>
 
+    <dimen name="rounded_corner_content_padding">16dp</dimen>
 </resources>
