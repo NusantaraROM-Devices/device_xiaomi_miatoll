@@ -5,34 +5,15 @@
 #
 
 PRODUCT_BUILD_SUPER_PARTITION := false
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
 PRODUCT_SHIPPING_API_LEVEL := 29
 
-PRODUCT_ENFORCE_RRO_TARGETS := *
-
-PRODUCT_PACKAGES += \
-    CarrierConfigOverlay \
-    DialerOverlayVayu \
-    MiatollFrameworks \
-    MiatollSettings \
-    MiatollSettingsProvider \
-    MiatollSystemUI \
-    TelephonyOverlay \
-    TetheringConfigOverlay \
-    WifiOverlay
+# AAPT
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
-
-# Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 2400
-TARGET_SCREEN_WIDTH := 1080
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -89,6 +70,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
+
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
@@ -114,11 +99,18 @@ PRODUCT_COPY_FILES += \
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.4-impl \
-    android.hardware.graphics.composer@2.4-service \
+    android.hardware.graphics.composer@2.4-service
+
+PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
-    android.hardware.graphics.mapper@4.0-impl-qti-display \
+    android.hardware.graphics.mapper@4.0-impl-qti-display
+
+PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
+    memtrack.atoll
+
+PRODUCT_PACKAGES += \
     disable_configstore \
     gralloc.atoll \
     hwcomposer.atoll \
@@ -130,7 +122,6 @@ PRODUCT_PACKAGES += \
     libsdmutils \
     libtinyxml \
     libvulkan \
-    memtrack.atoll \
     vendor.display.config@1.5 \
     vendor.display.config@1.14.vendor \
     vendor.display.config@2.0 \
@@ -286,6 +277,23 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Overlays
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
+    DialerOverlayVayu \
+    MiatollFrameworks \
+    MiatollSettings \
+    MiatollSettingsProvider \
+    MiatollSystemUI \
+    TelephonyOverlay \
+    TetheringConfigOverlay \
+    WifiOverlay
+
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
+# Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # Perf
 PRODUCT_PACKAGES += \
     libqti-perfd-client
@@ -384,7 +392,9 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.multihal \
+    android.hardware.sensors@2.1-service.multihal
+
+PRODUCT_PACKAGES += \
     libsensorndkbridge
 
 # Rootdir
