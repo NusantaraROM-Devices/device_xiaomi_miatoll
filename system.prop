@@ -39,4 +39,4 @@ persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # WFD
 persist.debug.wfd.enable=1
-vendor.wfdservice64=enable
+vendor.sys.video.disable.ubwc=1
