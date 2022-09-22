@@ -145,26 +145,26 @@ on boot
     chown system system /sys/class/leds/flashlight/brightness
 
      #define back flash and front flash
-        chmod 0660 /sys/class/leds/led:flash_0/brightness
-        chmod 0660 /sys/class/leds/led:flash_1/brightness
-        chmod 0660 /sys/class/leds/led:flash_2/brightness
-        chmod 0660 /sys/class/leds/led:torch_0/brightness
-        chmod 0660 /sys/class/leds/led:torch_1/brightness
-        chmod 0660 /sys/class/leds/led:torch_2/brightness
-        chmod 0660 /sys/class/leds/led:switch_0/brightness
-        chmod 0660 /sys/class/leds/led:switch_1/brightness
-        chmod 0660 /sys/class/leds/flashlight/brightness
+    chmod 0660 /sys/class/leds/led:flash_0/brightness
+    chmod 0660 /sys/class/leds/led:flash_1/brightness
+    chmod 0660 /sys/class/leds/led:flash_2/brightness
+    chmod 0660 /sys/class/leds/led:torch_0/brightness
+    chmod 0660 /sys/class/leds/led:torch_1/brightness
+    chmod 0660 /sys/class/leds/led:torch_2/brightness
+    chmod 0660 /sys/class/leds/led:switch_0/brightness
+    chmod 0660 /sys/class/leds/led:switch_1/brightness
+    chmod 0660 /sys/class/leds/flashlight/brightness
 	chmod 0777 /sys/class/ant_class/ant_state
 	chmod 0777 /sys/class/ant_div_class/ant_div_state
-        chown system system /sys/class/leds/led:flash_0/brightness
-        chown system system /sys/class/leds/led:flash_1/brightness
-        chown system system /sys/class/leds/led:flash_2/brightness
-        chown system system /sys/class/leds/led:torch_0/brightness
-        chown system system /sys/class/leds/led:torch_1/brightness
-        chown system system /sys/class/leds/led:torch_2/brightness
-        chown system system /sys/class/leds/led:switch_0/brightness
-        chown system system /sys/class/leds/led:switch_1/brightness
-        chown system system /sys/class/leds/flashlight/brightness
+    chown system system /sys/class/leds/led:flash_0/brightness
+    chown system system /sys/class/leds/led:flash_1/brightness
+    chown system system /sys/class/leds/led:flash_2/brightness
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chown system system /sys/class/leds/led:torch_2/brightness
+    chown system system /sys/class/leds/led:switch_0/brightness
+    chown system system /sys/class/leds/led:switch_1/brightness
+    chown system system /sys/class/leds/flashlight/brightness
 	chown system system /sys/class/ant_class/ant_state
 	chown system system /sys/class/ant_div_class/ant_div_state
     # This location is used by QCRIL to host UNIX domain
@@ -254,7 +254,6 @@ on boot
     # Create vpp directory
     mkdir /mnt/vendor/persist/vpp 0770 media media
 
-
     # Create hvdcp_opti directory
     mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
 
@@ -263,7 +262,6 @@ on boot
 
     # Create pa-cal driver directory lct-20181009
     mkdir /mnt/vendor/persist/audio 0770 audio audio
-
 
     # limit discard size to 128MB in order to avoid long IO latency
     write /sys/block/sda/queue/discard_max_bytes 134217728
@@ -489,11 +487,6 @@ on property:sys.boot_completed=1
     #Reinit lmkd to reconfigure lmkd properties
     setprop lmkd.reinit 1
 
-# corefile limit
-on property:persist.debug.trace=1
-    mkdir /data/core 0777 root root
-    write /proc/sys/kernel/core_pattern "/data/core/%E.%p.%e"
-
 on property:vendor.netflix.bsp_rev=*
     setprop ro.netflix.bsp_rev ${vendor.netflix.bsp_rev}
 
@@ -708,12 +701,6 @@ service hvdcp /system/bin/hvdcp
     class core
     user root
     disabled
-
-on property:persist.usb.hvdcp.detect=true
-    start hvdcp
-
-on property:persist.usb.hvdcp.detect=false
-    stop hvdcp
 
 service charger_monitor /system/bin/charger_monitor
     user root
