@@ -9,11 +9,18 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 PRODUCT_SHIPPING_API_LEVEL := 29
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
-
 PRODUCT_ENFORCE_RRO_TARGETS := *
+
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
+    DialerOverlayVayu \
+    MiatollFrameworks \
+    MiatollSettings \
+    MiatollSettingsProvider \
+    MiatollSystemUI \
+    TelephonyOverlay \
+    TetheringConfigOverlay \
+    WifiOverlay
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -348,7 +355,6 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlay \
     libprotobuf-cpp-full \
     librmnetctl \
     libxml2
@@ -458,8 +464,6 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     vendor.qti.hardware.wifi.hostapd@1.2.vendor \
     vendor.qti.hardware.wifi.supplicant@2.2.vendor \
-    TetheringConfigOverlay \
-    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 
